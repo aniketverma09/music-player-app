@@ -1,0 +1,463 @@
+
+.discover-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px 35px 120px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0, 119, 255, 0.18),
+      transparent 35%
+    ),
+    #070b12;
+
+  color: #ffffff;
+}
+
+   /* HERO */
+
+.discover-hero {
+  min-height: 220px;
+  padding: 40px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111c2e,
+      #0b111c 55%,
+      #070b12
+    );
+
+  border: 1px solid rgba(0, 119, 255, 0.18);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+.discover-small-title {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #2196ff;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.discover-hero h1 {
+  margin: 0;
+
+  max-width: 650px;
+
+  font-size: clamp(36px, 4.5vw, 58px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.discover-hero h1 span {
+  color: #2196ff;
+}
+
+.discover-hero p {
+  max-width: 520px;
+  margin: 15px 0 0;
+
+  color: #8d99aa;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.discover-hero-icon {
+  width: 120px;
+  height: 120px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 52px;
+
+  background: rgba(33, 150, 255, 0.08);
+
+  border: 1px solid rgba(33, 150, 255, 0.22);
+
+  box-shadow:
+    0 0 65px rgba(0, 119, 255, 0.14);
+}
+
+
+   /* CATEGORY BUTTONS */
+
+.discover-categories {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  margin: 26px 0;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.discover-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.genre-pill {
+  flex-shrink: 0;
+
+  padding: 9px 19px;
+
+  border: 1px solid #202b3a;
+  border-radius: 30px;
+
+  background: #111822;
+  color: #9ca8b8;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.genre-pill:hover {
+  background: #162235;
+  border-color: #176dcc;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.genre-pill.active {
+  background: #1677ff;
+  border-color: #1677ff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 25px rgba(0, 119, 255, 0.28);
+}
+
+
+   /* SECTION HEADER */
+
+.discover-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.discover-section-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.discover-section-header p {
+  margin: 5px 0 0;
+
+  color: #718096;
+
+  font-size: 12px;
+}
+
+.song-count {
+  color: #607086;
+  font-size: 12px;
+}
+
+
+   /* SONG GRID */
+
+.discover-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(155px, 180px));
+
+  justify-content: start;
+
+  gap: 22px;
+
+  box-sizing: border-box;
+}
+
+
+   /* SONG CARD */
+
+.discover-card-wrapper {
+  width: 180px;
+  min-width: 0;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.discover-card-wrapper:hover {
+  transform: translateY(-6px);
+
+  background: #0d1520;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.discover-card-wrapper > * {
+  width: 100% !important;
+  max-width: 180px !important;
+
+  box-sizing: border-box;
+}
+
+
+/* IMAGE */
+
+.discover-card-wrapper img {
+  width: 100% !important;
+  max-width: 180px !important;
+
+  height: 180px !important;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 9px;
+}
+
+
+   /* LOADING */
+
+.discover-loading {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #718096;
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+
+  margin-bottom: 14px;
+
+  border: 3px solid #1c2735;
+
+  border-top-color: #1677ff;
+
+  border-radius: 50%;
+
+  animation: discoverSpin 0.8s linear infinite;
+}
+
+@keyframes discoverSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+   /* EMPTY STATE */
+
+.discover-empty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #657386;
+}
+
+.discover-empty div {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.discover-empty h3 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.discover-empty p {
+  font-size: 13px;
+}
+
+
+   /* TABLET */
+
+@media (max-width: 1000px) {
+
+  .discover-page {
+    padding: 25px 25px 110px;
+  }
+
+  .discover-hero {
+    padding: 35px;
+  }
+
+  .discover-grid {
+    grid-template-columns:
+      repeat(4, 165px);
+
+    gap: 18px;
+  }
+
+  .discover-card-wrapper {
+    width: 165px;
+  }
+
+  .discover-card-wrapper > * {
+    max-width: 165px !important;
+  }
+
+  .discover-card-wrapper img {
+    max-width: 165px !important;
+    height: 165px !important;
+  }
+}
+
+
+   /* MOBILE */
+
+@media (max-width: 700px) {
+
+  .discover-page {
+    padding: 20px 16px 100px;
+  }
+
+  .discover-hero {
+    min-height: 210px;
+    padding: 28px 23px;
+    border-radius: 18px;
+  }
+
+  .discover-hero h1 {
+    font-size: 35px;
+    letter-spacing: -1px;
+  }
+
+  .discover-hero p {
+    font-size: 13px;
+  }
+
+  .discover-hero-icon {
+    display: none;
+  }
+
+  .discover-categories {
+    margin: 22px 0;
+  }
+
+  .genre-pill {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .discover-section-header h2 {
+    font-size: 22px;
+  }
+
+  .discover-grid {
+    grid-template-columns:
+      repeat(2, 145px);
+
+    gap: 16px;
+  }
+
+  .discover-card-wrapper {
+    width: 145px;
+  }
+
+  .discover-card-wrapper > * {
+    max-width: 145px !important;
+  }
+
+  .discover-card-wrapper img {
+    max-width: 145px !important;
+    height: 145px !important;
+  }
+}
+
+
+   /* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+  .discover-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .discover-hero {
+    padding: 24px 19px;
+  }
+
+  .discover-hero h1 {
+    font-size: 31px;
+  }
+
+  .discover-grid {
+    grid-template-columns:
+      repeat(2, 135px);
+
+    gap: 12px;
+  }
+
+  .discover-card-wrapper {
+    width: 135px;
+  }
+
+  .discover-card-wrapper > * {
+    max-width: 135px !important;
+  }
+
+  .discover-card-wrapper img {
+    max-width: 135px !important;
+    height: 135px !important;
+  }
+}
