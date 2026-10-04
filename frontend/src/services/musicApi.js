@@ -1,9 +1,6 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://music-player-app-d6be.onrender.com";
 
-// ===============================
 // SEARCH SONGS
-// ===============================
-
 export async function searchSongs(query) {
   const response = await fetch(
     `${API_URL}/api/music/search?query=${encodeURIComponent(query)}`,
@@ -18,10 +15,7 @@ export async function searchSongs(query) {
   return data.songs;
 }
 
-// ===============================
 // SEARCH HISTORY
-// ===============================
-
 export async function getSearchHistory() {
   const response = await fetch(`${API_URL}/api/history`);
 
@@ -54,10 +48,7 @@ export async function saveSearchHistory(query) {
   return response.json();
 }
 
-// ===============================
 // FAVORITES
-// ===============================
-
 // Get favorites
 export async function getFavorites() {
   const response = await fetch(`${API_URL}/api/favorites`);
